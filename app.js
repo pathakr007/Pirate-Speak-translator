@@ -1,13 +1,13 @@
 var txtInput = document.querySelector("#txt-input");
-var btnTranslate = document.querySelector("btn-translate");
-var outputDiv = document.querySelector("#output-div");
+var btnTranslate = document.querySelector("#btn-translate");
+var txtOutput = document.querySelector("#output-div");
 
 var url = "https://api.funtranslations.com/translate/pirate.json";
 
 function constructUrl (text)
 {
     newUrl = url + "?" + "text=" + text;
-    return input;
+    return newUrl;
 
 }
 
@@ -20,7 +20,7 @@ function clickHandler() {
 
     fetch(constructUrl(textinput))
         .then (response => response.json())
-        .then (json=> {txtoutput.innerText=json.contents.translated
+        .then (json=> {txtOutput.innerText=json.contents.translated
         }).catch (errorHandler)
 };
 
